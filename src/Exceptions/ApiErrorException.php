@@ -2,6 +2,7 @@
 
 namespace Cube\LaravelApiErrors\Exceptions;
 
+use Cube\LaravelApiErrors\ApiErrorResponse;
 use Exception;
 use Illuminate\Http\JsonResponse;
 
@@ -48,11 +49,6 @@ abstract class ApiErrorException extends Exception
      */
     public function render(): JsonResponse
     {
-        return response()->json([
-            'error' => [
-                'code' => $this->code(),
-                'message' => $this->message(),
-            ],
-        ], $this->statusCode());
+        return ApiErrorResponse::fromException($this);
     }
 }
