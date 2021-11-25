@@ -74,7 +74,7 @@ $response = ApiErrorResponse::fromException($exception);
 
 Returning this response would generate the following json response:
 
-```
+```json
 {
     "error": {
         "code": "user_account_banned",
@@ -96,7 +96,7 @@ $response = ApiErrorResponse::create('user_account_banned', 'User account banned
 
 Returning this response would generate the following json response:
 
-```
+```json
 {
     "error": {
         "code": "user_account_banned",
