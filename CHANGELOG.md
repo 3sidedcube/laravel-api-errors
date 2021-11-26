@@ -2,6 +2,6 @@
 
 All notable changes to `laravel-api-errors` will be documented in this file
 
-## 1.0.0 - 201X-XX-XX
+## 1.0.0 - 2021-11-26
 
-- initial release
+- Initial release

@@ -83,6 +83,19 @@ Returning this response would generate the following json response:
 }
 ```
 
+#### Automatically returning the exception response
+
+If you want to automatically return the JSON response from the exception, you can add the exception to the `$doNotReport`
+array in your `app/Exceptions/Handler.php` like so:
+
+```php
+use Cube\LaravelApiErrors\Exceptions\ApiErrorException;
+
+protected $dontReport = [
+    ApiErrorException::class,
+];
+```
+
 ### Passing data directly
 
 Alternatively you can use the `create()` method to create an API error response:
