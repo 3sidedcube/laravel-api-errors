@@ -2,8 +2,8 @@
 
 namespace ThreeSidedCube\LaravelApiErrors;
 
-use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
 use Illuminate\Http\JsonResponse;
+use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
 
 class ApiErrorResponse
 {
