@@ -1,6 +1,6 @@
 <?php
 
-namespace Cube\LaravelApiErrors;
+namespace ThreeSidedCube\LaravelApiErrors;
 
 use Illuminate\Support\ServiceProvider;
 

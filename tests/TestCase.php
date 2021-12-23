@@ -1,8 +1,8 @@
 <?php
 
-namespace Cube\LaravelApiErrors\Tests;
+namespace ThreeSidedCube\LaravelApiErrors\Tests;
 
-use Cube\LaravelApiErrors\ApiErrorServiceProvider;
+use ThreeSidedCube\LaravelApiErrors\ApiErrorServiceProvider;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 

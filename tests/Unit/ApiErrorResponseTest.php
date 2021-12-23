@@ -1,10 +1,10 @@
 <?php
 
-namespace Cube\LaravelApiErrors\Tests\Unit;
+namespace ThreeSidedCube\LaravelApiErrors\Tests\Unit;
 
-use Cube\LaravelApiErrors\ApiErrorResponse;
-use Cube\LaravelApiErrors\Exceptions\ApiErrorException;
-use Cube\LaravelApiErrors\Tests\TestCase;
+use ThreeSidedCube\LaravelApiErrors\ApiErrorResponse;
+use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
+use ThreeSidedCube\LaravelApiErrors\Tests\TestCase;
 
 class ApiErrorResponseTest extends TestCase
 {

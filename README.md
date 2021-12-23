@@ -30,8 +30,8 @@ be set (2 of which are required):
 Once you have an exception, you can use the `fromException()` method to generate an API error response:
 
 ```php
-use Cube\LaravelApiErrors\ApiErrorResponse;
-use Cube\LaravelApiErrors\Exceptions\ApiErrorException;
+use ThreeSidedCube\LaravelApiErrors\ApiErrorResponse;
+use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
 
 class UserBannedException extends ApiErrorException
 {
@@ -89,7 +89,7 @@ If you want to automatically return the JSON response from the exception, you ca
 array in your `app/Exceptions/Handler.php` like so:
 
 ```php
-use Cube\LaravelApiErrors\Exceptions\ApiErrorException;
+use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
 
 protected $dontReport = [
     ApiErrorException::class,
@@ -101,7 +101,7 @@ protected $dontReport = [
 Alternatively you can use the `create()` method to create an API error response:
 
 ```php
-use Cube\LaravelApiErrors\ApiErrorResponse;
+use ThreeSidedCube\LaravelApiErrors\ApiErrorResponse;
 
 // This will return an instance of JsonResponse
 $response = ApiErrorResponse::create('user_account_banned', 'User account banned.', 403);
@@ -139,4 +139,4 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## License
 
-Laravel Horizon is open-sourced software licensed under the [MIT license](LICENSE.md).
+Laravel API Errors is open-sourced software licensed under the [MIT license](LICENSE.md).

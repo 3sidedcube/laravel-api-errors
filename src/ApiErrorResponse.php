@@ -1,8 +1,8 @@
 <?php
 
-namespace Cube\LaravelApiErrors;
+namespace ThreeSidedCube\LaravelApiErrors;
 
-use Cube\LaravelApiErrors\Exceptions\ApiErrorException;
+use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
 use Illuminate\Http\JsonResponse;
 
 class ApiErrorResponse
