@@ -85,7 +85,7 @@ Returning this response would generate the following json response:
 
 #### Automatically returning the exception response
 
-If you want to automatically return the JSON response from the exception, you can add the exception to the `$doNotReport`
+If you want to automatically return the JSON response from the exception, you can add the exception to the `$dontReport`
 array in your `app/Exceptions/Handler.php` like so:
 
 ```php
@@ -114,6 +114,89 @@ Returning this response would generate the following json response:
     "error": {
         "code": "user_account_banned",
         "message": "User account banned."
+    }
+}
+```
+
+### Additional data
+
+If you would like to pass additional "meta" data to the response, you can use the `meta()` method or pass an array to
+the create method like so:
+
+```php
+use ThreeSidedCube\LaravelApiErrors\ApiErrorResponse;
+use ThreeSidedCube\LaravelApiErrors\Exceptions\ApiErrorException;
+
+class UserBannedException extends ApiErrorException
+{
+    /**
+     * A short error code describing the error.
+     *
+     * @return string
+     */
+    public function code(): string
+    {
+        return 'user_account_banned';
+    }
+
+    /**
+     * A human-readable message providing more details about the error.
+     *
+     * @return string
+     */
+    public function message(): string
+    {
+        return 'User account banned.';
+    }
+
+    /**
+     * The api error status code.
+     *
+     * @return int
+     */
+    public function statusCode(): int
+    {
+        return 403;
+    }
+    
+    /**
+     * Any additional metadata to be included in the response.
+     *
+     * @return array
+     */
+    public function meta(): array
+    {
+        return [
+            'foo' => 'bar',
+        ];
+    }
+}
+
+$exception = new UserBannedException();
+
+// This will return an instance of JsonResponse
+$response = ApiErrorResponse::fromException($exception);
+```
+
+or
+
+```php
+use ThreeSidedCube\LaravelApiErrors\ApiErrorResponse;
+
+// This will return an instance of JsonResponse
+$response = ApiErrorResponse::create('user_account_banned', 'User account banned.', 403, ['foo' => 'bar']);
+```
+
+Returning this response would generate the following json response:
+
+```json
+{
+    "error": {
+        "code": "user_account_banned",
+        "message": "User account banned.",
+        "meta": {
+            "foo": "bar"
+        }
     }
 }
 ```
