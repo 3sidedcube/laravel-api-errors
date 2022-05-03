@@ -33,6 +33,16 @@ abstract class ApiErrorException extends Exception
     }
 
     /**
+     * Any additional metadata to be included in the response.
+     *
+     * @return array
+     */
+    public function meta(): array
+    {
+        return [];
+    }
+
+    /**
      * Report the exception.
      *
      * @return bool
