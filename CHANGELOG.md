@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-api-errors` will be documented in this file
 
+## 1.3.1 - 2024-05-20
+
+- Add support for PHP 8.3 & Laravel 11
+
 ## 1.2.0 - 2022-05-03
 
 - Add support for additional meta data (#2)
